@@ -79,19 +79,19 @@ const GameSelectionScreen = () => {
       // Perform additional actions or navigate to the desired URL for the clicked icon
       switch (index) {
         case 0:
-          window.location.href = 'https://www.linkedin.com/in/kevinwong711/';
-          break;
+            window.open('https://www.linkedin.com/in/kevinwong711/', '_blank');
+            break;
         case 1:
-          window.location.href = 'https://github.com/KeveenWong';
-          break;
+            window.open('https://github.com/KeveenWong', '_blank');
+            break;
         case 2:
-          window.location.href = 'mailto:kevwong711@gmail.com';
-          break;
+            window.location.href = 'mailto:kevwong711@gmail.com';
+            break;
         case 3:
-          window.location.href = kevinResume;
-          break;
+            window.open(kevinResume, '_blank');
+            break;
         default:
-          break;
+            break;
       }
     };
 

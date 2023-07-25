@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import linkedin from '../assets/linkedin.png'
 import github from '../assets/github.png'
 import mail from '../assets/mail.png'
-import resume from '../assets/resume.png'
-import kevinResume from '../assets/kevinresume.pdf'
+import instagram from '../assets/instagram.png'
 
 const IconContainer = styled.div`
     display: flex;
@@ -85,10 +84,10 @@ const GameSelectionScreen = () => {
             window.open('https://github.com/KeveenWong', '_blank');
             break;
         case 2:
-            window.location.href = 'mailto:kevwong711@gmail.com';
+            window.open('https://www.instagram.com/keveenwong/', '_blank');
             break;
         case 3:
-            window.open(kevinResume, '_blank');
+            window.location.href = 'mailto:kevwong711@gmail.com';
             break;
         default:
             break;
@@ -104,10 +103,10 @@ const GameSelectionScreen = () => {
                 <img src={github} alt="Custom Icon" width={200} height={200}/>
             </Icon>
             <Icon selected={selectedIndex === 2} unselected={selectedIndex !== 2} ref={el => (iconRefs.current[2] = el)} onClick={() => handleIconClick(2)}>
-                <img src={mail} alt="Custom Icon" width={200} height={200}/>
+                <img src={instagram} alt="Custom Icon" width={200} height={200}/>
             </Icon>
             <Icon selected={selectedIndex === 3} unselected={selectedIndex !== 3} ref={el => (iconRefs.current[3] = el)} onClick={() => handleIconClick(3)}>
-                <img src={resume} alt="Custom Icon" width={200} height={200}/>
+                <img src={mail} alt="Custom Icon" width={200} height={200}/>
             </Icon>
         </IconContainer>
     );

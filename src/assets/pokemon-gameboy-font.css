@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'PokemonGameboy';
+    src: url('../assets/PKMN\ RBYGSC.ttf') format('truetype');
+  }
+  
+  .pokemon-gameboy-font {
+    font-family: 'PokemonGameboy', sans-serif;
+  }
+  

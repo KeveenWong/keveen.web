@@ -10,6 +10,12 @@ const IconContainer = styled.div`
     align-items: center;
     justify-content: center;
     height: 100vh; /* Set the height of the container to full viewport height */
+
+    /* Media query for screens up to 768px wide (e.g., smartphones) */
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        /* Add additional styles to adjust the layout for mobile */
+    }
 `;
 
 const Icon = styled.div`
@@ -21,6 +27,21 @@ const Icon = styled.div`
     transform: ${props => (props.unselected ? 'scale(0.8)' : 'none')};
     opacity: ${props => (props.unselected ? '0.6' : '1')};
 
+    /* Adjust the size of the icons for mobile */
+    img {
+      width: 10em;
+      height: 10em;
+    }
+
+    /* Media query for screens up to 768px wide (e.g., smartphones) */
+    @media (max-width: 768px) {
+        margin: 0 10px; /* Reduce the margin for mobile */
+        img {
+            width: 5em; /* Adjust the size of the icons for mobile */
+            height: 5em; /* Adjust the size of the icons for mobile */
+        }
+    }
+    
     @keyframes highlight {
         0% {
         transform: scale(1);
@@ -45,7 +66,7 @@ const Icon = styled.div`
     }
 `;
 
-const GameSelectionScreen = () => {
+const GameSelectionScreen = ({ activeKey }) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const iconRefs = useRef([]);
 
@@ -54,11 +75,11 @@ const GameSelectionScreen = () => {
     }, []);
 
     const handleKeyDown = event => {
-        if (event.key === 'ArrowLeft') {
+        if (event.key === 'ArrowLeft' || activeKey === 'left') {
         setSelectedIndex(prevIndex => (prevIndex === 0 ? 3 : prevIndex - 1));
-        } else if (event.key === 'ArrowRight') {
+        } else if (event.key === 'ArrowRight' || activeKey === 'right') {
         setSelectedIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
-        } else if (event.key === 'z') {
+        } else if (event.key === 'z' || activeKey === 'z') {
         const selectedIcon = iconRefs.current[selectedIndex];
         if (selectedIcon) {
             selectedIcon.click();
@@ -71,8 +92,14 @@ const GameSelectionScreen = () => {
         return () => {
           window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [selectedIndex]);
+    }, [selectedIndex, activeKey]);
   
+    useEffect(() => {
+        if (activeKey) {
+          handleKeyDown({ key: activeKey }); // Call handleKeyDown when activeKey changes
+        }
+      }, [activeKey]);
+
     const handleIconClick = index => {
       setSelectedIndex(index);
       // Perform additional actions or navigate to the desired URL for the clicked icon

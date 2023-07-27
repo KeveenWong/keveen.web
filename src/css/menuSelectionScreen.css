@@ -1,0 +1,60 @@
+/* Common styles for both mobile and desktop */
+.menu-selection-screen {
+    position: relative;
+  }
+
+.hamburger {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.4);
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 2;
+}
+  /* Styles for mobile devices */
+  @media (max-width: 768px) {
+    .menu-selection-screen img {
+      left: 5%;
+    }
+  
+    .menu-selection-screen .arrow-indicator {
+      left: 28%;
+      width: 20px;
+    }
+  
+    .menu-selection-screen .pokemon-gameboy-font {
+      font-size: 32px;
+      margin-top: 1%;
+    }
+  }
+  
+  /* Styles for desktop devices */
+  @media (min-width: 769px) {
+    /* .menu-selection-screen img {
+        position: absolute;
+        top: 100px;
+        left: 60px;
+        width: 30px;
+        height: auto 
+    } */
+  
+    .menu-selection-screen .arrow-indicator {
+        position: absolute;
+        left: 29%;
+        height: auto;
+    }
+  
+    .menu-selection-screen .pokemon-gameboy-font {
+        position: absolute;
+        left: 110px;
+        color: #000;
+        font-size: 40px; 
+        cursor: pointer;
+    }
+  }
+

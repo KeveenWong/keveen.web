@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../assets/pokemon-gameboy-font.css'; 
+import '../css/menuSelectionScreen.css';
 import selectMenu from '../assets/menu_select.png';
 import arrowIndicator from '../assets/select_arrow.png'
 
@@ -48,53 +49,41 @@ const MenuSelectionScreen = () => {
     <div
       style={{
         position: 'absolute',
-        top: '20px', 
-        right: '20px', 
+        top: '1%', 
+        right: '0.5%', 
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-end',
-        zIndex: 9999, // Adjust overlay
+        zIndex: 1, // Adjust overlay
       }}
     >
       {/* Hamburger icon to open the menu */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#000',
-          color: '#fff',
-          width: '30px',
-          height: '30px',
-          borderRadius: '4px',
-          cursor: 'pointer',
-        }}
-        onClick={() => setMenuVisible((prevState) => !prevState)}
-      >
+      <div className='hamburger' onClick={() => setMenuVisible((prevState) => !prevState)}>
         <i className="fas fa-bars"></i>
       </div>
 
       {/* Menu selection screen */}
       {menuVisible && (
-        <div
-          style={{
-            position: 'relative',
-          }}
-        >
-          <img
-            src={selectMenu}
+        <div className="menu-selection-screen">
+            <img 
+            src={selectMenu} 
             alt="Menu Selection Screen"
-          />
+            style={{
+                width: '80%',
+                paddingLeft: '20%',
+                height: 'auto'
+              }} 
+            />
 
           {/* Highlighted menu item arrow indicator */}
           <img
             src={arrowIndicator}
             alt="Arrow Indicator"
+            className="arrow-indicator"
             style={{
               position: 'absolute',
-              top: `${110 + highlightedIndex * 100}px`,
-              left: '60px',
-              width: '30px',
+              top: `${11.5 + highlightedIndex * 11}%`,
+              width: '24px',
               height: 'auto', 
             }}
           />
@@ -106,14 +95,13 @@ const MenuSelectionScreen = () => {
               className="pokemon-gameboy-font"
               style={{
                 position: 'absolute',
-                top: `${100 + index * 100}px`, 
-                left: '110px', 
-                color: '#000',
-                fontSize: '48px', 
+                top: `${10 + index * 11}%`, 
+                left: '35%', 
+                color: '#000', 
                 cursor: 'pointer',
               }}
               onClick={() => {
-                // TO ADD PAGE ROUTES !!!
+                // TO ADD PAGE ROUTES !!!!
                 console.log('Navigate to', option);
                 setMenuVisible(false); // Close the menu after selecting a menu item
               }}

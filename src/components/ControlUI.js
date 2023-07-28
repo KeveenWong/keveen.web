@@ -61,12 +61,29 @@ const ControlUI = () => {
     width: '70px',
     height: '70px',
     borderRadius: '10px',
+    borderColor: 'violet',
+    borderWidth: '2px',
+    borderStyle: 'solid',
+  };
+
+  const centerButtonStyle2 = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+    color: 'white',
+    width: '71px',
+    height: '71px',
+    borderRadius: '10px',
 };
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{ display: 'flex' }}>
             <div id="dpad" style={padStyle}>
+              <div style={{gridRow: '2', gridColumn: '2'}}>
+                  <div style={centerButtonStyle}></div>
+              </div>
               <div style={{gridRow: '1', gridColumn: '2'}}>
                   <button style={buttonStyle} onClick={() => pressKey('ArrowUp')}>&#9650;</button>
               </div>
@@ -80,7 +97,7 @@ const ControlUI = () => {
                   <button style={buttonStyle} onClick={() => pressKey('ArrowDown')}>&#9660;</button>
               </div>
               <div style={{gridRow: '2', gridColumn: '2'}}>
-                  <div style={centerButtonStyle}></div>
+                  <div style={centerButtonStyle2}></div>
               </div>
           </div>
               <div id="buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: 20 }}>

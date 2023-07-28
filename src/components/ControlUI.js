@@ -37,7 +37,7 @@ const ControlUI = () => {
       borderRadius: '5px',
       width: '150px',
       height: '150px',
-      margin: '50px 50px'
+      margin: '0 70px'
   };
   
   const buttonStyle = {
@@ -45,12 +45,21 @@ const ControlUI = () => {
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: 'black',
-      color: 'violet',
+      color: 'white',
       width: '60px',
       height: '60px',
       borderRadius: '10px',
-      borderColor: 'violet'
+      borderColor: 'white',
   };
+
+  const rectButtonStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '50px',
+    height: '10px',
+    borderRadius: '20px'
+  }
 
   const centerButtonStyle = {
     display: 'flex',
@@ -61,7 +70,7 @@ const ControlUI = () => {
     width: '70px',
     height: '70px',
     borderRadius: '10px',
-    borderColor: 'violet',
+    borderColor: 'white',
     borderWidth: '2px',
     borderStyle: 'solid',
   };
@@ -100,14 +109,26 @@ const ControlUI = () => {
                   <div style={centerButtonStyle2}></div>
               </div>
           </div>
-              <div id="buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: 20 }}>
-                  <button onClick={() => handleButtonClick('z')}>A</button>
-                  <button onClick={() => handleButtonClick('x')}>B</button>
-              </div>
+          <div id="buttons" style={{ transform: 'rotate(75deg)', margin: '0 100px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-100deg)' }}>
+              <button className='circleRed' onClick={() => handleButtonClick('z')}></button>
+              <div style={{ transform: 'rotate(0deg)' }}>A</div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-100deg)', padding: '0px 0px' }}>
+              <button className='circleRed' onClick={() => handleButtonClick('x')}></button>
+              <div style={{ transform: 'rotate(0deg)' }}>B</div>
+            </div>
+          </div> 
           </div>
-          <div id="controls" style={{ display: 'flex', justifyContent: 'space-between', width: 100, marginTop: 20 }}>
-              <button onClick={() => handleButtonClick('c')}>Start</button>
-              <button>Select</button>
+          <div id="controls" style={{ display: 'flex', justifyContent: 'space-between', width: 100, marginTop: 20, transform: 'rotate(-5deg)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-15deg)' }}>
+              <button style={rectButtonStyle} onClick={() => handleButtonClick('c')}></button>
+              <div>Select</div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-15deg)' }}>
+              <button style={rectButtonStyle} onClick={() => handleButtonClick('')}></button>
+              <div>Start</div>
+            </div>
           </div>
       </div>
   );

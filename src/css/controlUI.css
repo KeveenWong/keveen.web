@@ -9,7 +9,9 @@
 }
 
 #buttons {
+    display: 'flex';
     flex-direction: column;
+    align-items: 'center';
 }
 
 #controls button {
@@ -41,4 +43,11 @@
 
 .controlButton:active span {
     transform: none;
+}
+
+.circleRed {
+    border-radius: 50%;
+    background-color: #9a2257;
+    width: 60px;
+    height: 60px;
 }

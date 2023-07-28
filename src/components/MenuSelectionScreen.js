@@ -13,6 +13,7 @@ const MenuSelectionScreen = () => {
 
   // Function to handle the "x" key press
   const handleKeyPress = (event) => {
+    console.log('WAHOO!', event)
     if (event.key === 'x') {
       if (!menuVisible) {
         // Save the current focus index when the menu opens
@@ -38,10 +39,10 @@ const MenuSelectionScreen = () => {
 
   // Add an event listener for the "x" key press and arrow key presses when the component mounts
   useEffect(() => {
-    document.addEventListener('keydown', handleKeyPress);
+    window.addEventListener('keydown', handleKeyPress);
     // Remove the event listener when the component unmounts
     return () => {
-      document.removeEventListener('keydown', handleKeyPress);
+      window.removeEventListener('keydown', handleKeyPress);
     };
   }, [menuVisible]); // Include menuVisible as a dependency to ensure the effect is updated when the menu opens/closes
 

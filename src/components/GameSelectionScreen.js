@@ -66,7 +66,7 @@ const Icon = styled.div`
     }
 `;
 
-const GameSelectionScreen = ({ activeKey }) => {
+const GameSelectionScreen = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const iconRefs = useRef([]);
 
@@ -75,11 +75,12 @@ const GameSelectionScreen = ({ activeKey }) => {
     }, []);
 
     const handleKeyDown = event => {
-        if (event.key === 'ArrowLeft' || activeKey === 'left') {
+        console.log(`Received ${event.key}`);
+        if (event.key === 'ArrowLeft') {
         setSelectedIndex(prevIndex => (prevIndex === 0 ? 3 : prevIndex - 1));
-        } else if (event.key === 'ArrowRight' || activeKey === 'right') {
+        } else if (event.key === 'ArrowRight') {
         setSelectedIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
-        } else if (event.key === 'z' || activeKey === 'z') {
+        } else if (event.key === 'z') {
         const selectedIcon = iconRefs.current[selectedIndex];
         if (selectedIcon) {
             selectedIcon.click();
@@ -92,13 +93,7 @@ const GameSelectionScreen = ({ activeKey }) => {
         return () => {
           window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [selectedIndex, activeKey]);
-  
-    useEffect(() => {
-        if (activeKey) {
-          handleKeyDown({ key: activeKey }); // Call handleKeyDown when activeKey changes
-        }
-      }, [activeKey]);
+    }, [selectedIndex]);
 
     const handleIconClick = index => {
       setSelectedIndex(index);

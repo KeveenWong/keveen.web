@@ -1,0 +1,47 @@
+
+#dpad, #buttons, #controls {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+#dpad button {
+    margin: 5px;
+}
+
+#buttons {
+    flex-direction: column;
+}
+
+#controls button {
+    margin: 0 5px;
+}
+
+.controlButton {
+    background: #afafaf;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.controlButton span {
+    display: block;
+    padding: 25px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: #333532;
+    color: #c4c4c4;
+    transform: translateY(-3px) translateX(-3px);
+}
+
+.isActive span {
+    transform: none !important;
+}
+
+.controlButton:active span {
+    transform: none;
+}
+
+

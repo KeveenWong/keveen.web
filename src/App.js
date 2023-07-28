@@ -25,12 +25,12 @@ function App() {
       <div style={{marginBottom: '100px'}}> 
         <ControlUI />
       </div>
-      {/* <div style={{textAlign: 'center', marginBottom: '40px'}}>
+      <div style={{textAlign: 'center', marginBottom: '40px'}}>
         <p className="pokemon-gameboy-font" style={{fontSize: '24px'}}>Use Arrow Keys to highlight icons/menu items, Z to select, X to open Menu</p>
-        <p className="pokemon-gameboy-font" style={{fontSize: '16px'}}>(You can also just click/tap like normal)</p>
+        <p className="pokemon-gameboy-font" style={{fontSize: '16px'}}>(You can also just click/tap like normal *NEW FEATURE: GAMEPAD*)</p>
         <p className="pokemon-gameboy-font" style={{fontSize: '16px'}}>(Website still in production, other pages still in development)</p>
 
-      </div> */}
+      </div>
     </div>
 
   );

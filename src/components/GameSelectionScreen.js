@@ -66,7 +66,7 @@ const Icon = styled.div`
     }
 `;
 
-const GameSelectionScreen = () => {
+const GameSelectionScreen = ({ disabled }) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const iconRefs = useRef([]);
 
@@ -75,16 +75,19 @@ const GameSelectionScreen = () => {
     }, []);
 
     const handleKeyDown = event => {
-        console.log(`Received ${event.key}`);
-        if (event.key === 'ArrowLeft') {
-        setSelectedIndex(prevIndex => (prevIndex === 0 ? 3 : prevIndex - 1));
-        } else if (event.key === 'ArrowRight') {
-        setSelectedIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
-        } else if (event.key === 'z') {
-        const selectedIcon = iconRefs.current[selectedIndex];
-        if (selectedIcon) {
-            selectedIcon.click();
-        }
+        console.log(disabled)
+        if (!disabled) {
+            console.log(`Received ${event.key}`);
+            if (event.key === 'ArrowLeft') {
+                setSelectedIndex(prevIndex => (prevIndex === 0 ? 3 : prevIndex - 1));
+            } else if (event.key === 'ArrowRight') {
+                setSelectedIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
+            } else if (event.key === 'z') {
+                const selectedIcon = iconRefs.current[selectedIndex];
+                if (selectedIcon) {
+                    selectedIcon.click();
+                }
+            }   
         }
     };
       
@@ -93,7 +96,7 @@ const GameSelectionScreen = () => {
         return () => {
           window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [selectedIndex]);
+    }, [selectedIndex, disabled]);
 
     const handleIconClick = index => {
       setSelectedIndex(index);

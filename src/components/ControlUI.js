@@ -126,7 +126,7 @@ const ControlUI = () => {
               <div>Select</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-15deg)' }}>
-              <button style={rectButtonStyle} onClick={() => handleButtonClick('')}></button>
+              <button style={rectButtonStyle} onClick={() => handleButtonClick('x')}></button>
               <div>Start</div>
             </div>
           </div>

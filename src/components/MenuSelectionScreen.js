@@ -4,7 +4,7 @@ import '../css/menuSelectionScreen.css';
 import selectMenu from '../assets/menu_select.png';
 import arrowIndicator from '../assets/select_arrow.png'
 
-const MenuSelectionScreen = () => {
+const MenuSelectionScreen = ({ isOpen, setIsOpen }) => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const [prevFocusIndex, setPrevFocusIndex] = useState(0);
@@ -13,9 +13,9 @@ const MenuSelectionScreen = () => {
 
   // Function to handle the "x" key press
   const handleKeyPress = (event) => {
-    console.log('WAHOO!', event)
     if (event.key === 'x') {
-      if (!menuVisible) {
+        setIsOpen(!isOpen);
+        if (!menuVisible) {
         // Save the current focus index when the menu opens
         setPrevFocusIndex(highlightedIndex);
         // Focus on the menu when it opens

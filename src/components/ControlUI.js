@@ -5,7 +5,6 @@ const ControlUI = () => {
     const intervalId = useRef(null);
 
     const pressKey = (key) => {
-      console.log(`Firing ${key}`); // Add this line
       const event = new KeyboardEvent('keydown', { key: key, bubbles: true });
       window.dispatchEvent(event);
     };
@@ -37,7 +36,7 @@ const ControlUI = () => {
       borderRadius: '5px',
       width: '150px',
       height: '150px',
-      margin: '0 70px'
+      marginRight: '170px'
   };
   
   const buttonStyle = {
@@ -89,7 +88,7 @@ const ControlUI = () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{ display: 'flex' }}>
-            <div id="dpad" style={padStyle}>
+            <div id="dpad" style={padStyle} >
               <div style={{gridRow: '2', gridColumn: '2'}}>
                   <div style={centerButtonStyle}></div>
               </div>
@@ -109,25 +108,25 @@ const ControlUI = () => {
                   <div style={centerButtonStyle2}></div>
               </div>
           </div>
-          <div id="buttons" style={{ transform: 'rotate(75deg)', margin: '0 100px' }}>
+          <div id="buttons" style={{ transform: 'rotate(75deg)', marginRight: '60px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-100deg)' }}>
               <button className='circleRed' onClick={() => handleButtonClick('z')}></button>
-              <div style={{ transform: 'rotate(0deg)' }}>A</div>
+              <div className='console-gameboy-font' style={{ transform: 'rotate(0deg)', fontSize:'30px', marginTop: '10px', color: '#494786' }}>A</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-100deg)', padding: '0px 0px' }}>
               <button className='circleRed' onClick={() => handleButtonClick('x')}></button>
-              <div style={{ transform: 'rotate(0deg)' }}>B</div>
+              <div className='console-gameboy-font' style={{ transform: 'rotate(0deg)', fontSize:'30px', marginTop: '10px', color: '#494786' }}>B</div>
             </div>
           </div> 
           </div>
-          <div id="controls" style={{ display: 'flex', justifyContent: 'space-between', width: 100, marginTop: 20, transform: 'rotate(-5deg)' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-15deg)' }}>
+          <div id="controls" style={{ display: 'flex', justifyContent: 'space-between', width: 100, marginTop: 20, marginRight: 60, transform: 'rotate(-5deg)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-15deg)', marginRight: '10px'  }}>
               <button style={rectButtonStyle} onClick={() => handleButtonClick('c')}></button>
-              <div>Select</div>
+              <div className='console-gameboy-font' style={{ fontSize:'20px', marginTop: '5px', color: '#494786' }}>Select</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'rotate(-15deg)' }}>
               <button style={rectButtonStyle} onClick={() => handleButtonClick('x')}></button>
-              <div>Start</div>
+              <div className='console-gameboy-font' style={{ fontSize:'20px', marginTop: '5px', color: '#494786' }}>Start</div>
             </div>
           </div>
       </div>

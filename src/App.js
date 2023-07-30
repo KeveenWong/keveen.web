@@ -2,7 +2,7 @@ import './css/App.css';
 import GameSelectionScreen from './components/GameSelectionScreen';
 import background from './assets/sparkles.gif'
 import MenuSelectionScreen from './components/MenuSelectionScreen';
-import './assets/pokemon-gameboy-font.css';
+import './assets/fonts.css';
 import React, { useState } from 'react';
 import ControlUI from './components/ControlUI';
 

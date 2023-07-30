@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../assets/pokemon-gameboy-font.css'; 
+import '../assets/fonts.css'; 
 import '../css/menuSelectionScreen.css';
 import selectMenu from '../assets/menu_select.png';
 import arrowIndicator from '../assets/select_arrow.png'

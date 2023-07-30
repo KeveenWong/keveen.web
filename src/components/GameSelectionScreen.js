@@ -75,9 +75,7 @@ const GameSelectionScreen = ({ disabled }) => {
     }, []);
 
     const handleKeyDown = event => {
-        console.log(disabled)
         if (!disabled) {
-            console.log(`Received ${event.key}`);
             if (event.key === 'ArrowLeft') {
                 setSelectedIndex(prevIndex => (prevIndex === 0 ? 3 : prevIndex - 1));
             } else if (event.key === 'ArrowRight') {

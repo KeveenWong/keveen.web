@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  overflow: hidden;  /* Change to 'hidden' if you want no scrolling at all */
 }
 
 .background-image {
@@ -8,3 +13,27 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.image-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* <div style={{ 
+  backgroundImage: `url(${background})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  height: '100vh', // This makes sure the div takes up the full height of the viewport
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+}}> */

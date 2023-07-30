@@ -1,0 +1,16 @@
+.background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* no quotes */
+    width: 100vw; /* cover the entire viewport width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: -1; /* This ensures the background is behind other content */
+  }
+  

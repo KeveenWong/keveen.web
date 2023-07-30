@@ -36,7 +36,8 @@ const ControlUI = () => {
       borderRadius: '5px',
       width: '150px',
       height: '150px',
-      marginRight: '170px'
+      marginRight: '170px',
+      zIndex: '1'
   };
   
   const buttonStyle = {
@@ -83,10 +84,25 @@ const ControlUI = () => {
     width: '71px',
     height: '71px',
     borderRadius: '10px',
-};
+  };
+
+  const baseStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#c4bebb',
+    margin: '-20px 0px',
+    width: '35em',
+    height: '25em',
+    opacity: '50%',
+    zIndex: '0',
+    position: 'absolute', // added this
+}
+
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', margin: '5em 0',}}>
+        <div style={baseStyle} />
           <div style={{ display: 'flex' }}>
             <div id="dpad" style={padStyle} >
               <div style={{gridRow: '2', gridColumn: '2'}}>
